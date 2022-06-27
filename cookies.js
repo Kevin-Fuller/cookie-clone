@@ -1,5 +1,5 @@
 //game variables
-let cookies = 200;
+let cookies = 0;
 let cookiesPerSecond = 0;
 let clickMultiplyer = 1;
 
@@ -25,6 +25,7 @@ let building2Total = 0;
 let building2Cost = 100;
 let building2BaseCPS = 4;
 let building2Multiplyer = 1;
+const building2Wrapper = document.getElementById('building2');
 const building2CostLabel = document.getElementById('building2Cost');
 const building2TotalLabel = document.getElementById('building2Total');
 const building2 = document.getElementById('building2');
@@ -47,6 +48,7 @@ let building1Total = 0;
 let building1Cost = 10;
 let building1BaseCPS = 1;
 let building1Multiplyer = 1;
+const building1Wrapper = document.getElementById('building1');
 const building1CostLabel = document.getElementById('building1Cost');
 const building1TotalLabel = document.getElementById('building1Total');
 const building1 = document.getElementById('building1');
@@ -73,9 +75,22 @@ function updateCPS() {
     cookiesPerSecond = tempCPS;
 }
 
+//update greyed out buildings
+function updateGreyedOutBuildings() {
+    let listOfBuildings = [[building1Wrapper, building1Cost], [building2Wrapper, building2Cost]]
+    listOfBuildings.forEach((item)=> {
+        if(item[1] <= cookies) {
+            item[0].classList.remove('greyedOut');
+        } else {
+            item[0].classList.add('greyedOut');
+        }
+    })
+}
+
 //game loop
 setInterval(updateGame, 100)
 function updateGame() {
     updateCookies();
+    updateGreyedOutBuildings()
     cookies += cookiesPerSecond * 0.1
 }

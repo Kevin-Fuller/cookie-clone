@@ -44,6 +44,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 20% 60% 20%;
+    cursor: pointer;
 }
 
 .building__icon {
@@ -57,6 +58,10 @@
 
 .building__cost {
     font-size: 18px;
+}
+
+.greyedOut {
+    opacity: 0.8;
 }
 
 .building__num {
