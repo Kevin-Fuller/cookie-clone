@@ -1,16 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="layout.css">
 </head>
+
 <body>
     <main>
-        <div class="game__wrapper">
-            <section class="clicking__section"></section>
+        <div id="game__wrapper">
+            <section id="clicking__section">
+                <div id="cookie__information__wrapper">
+                    <div id="cookie__information__title">
+                        <div id="cookie__counter">0</div>
+                        <div id="cookie__counter__label">Cookies</div>
+                        <div id="cookies__per__second">per second: 0</div>
+                    </div> 
+                </div>
+                <div id="clicking__cookie__wrapper">
+                    <button id="clickable__cookie">cookie</button>
+                </div>
+            </section>
+            <section id="shop__wrapper">
+                <section id="shop__upgrades">
+                    upgrades
+                </section>
+                <section id="shop__buildings">
+                    <div class="building__wrapper" id="building1">
+                        <div class="building__icon">
+                            icon
+                        </div>
+                        <div class="building__text">
+                            <div class="building__title">Cursor</div>
+                            <div class="building__cost" id="building1Cost">10</div>
+                        </div>
+                        <div class="building__num" id="building1Total"></div>
+                    </div>
+
+                    <div class="building__wrapper" id="building2">
+                        <div class="building__icon">
+                            icon
+                        </div>
+                        <div class="building__text">
+                            <div class="building__title">Grandma</div>
+                            <div class="building__cost" id="building2Cost">100</div>
+                        </div>
+                        <div class="building__num" id="building2Total"></div>
+                    </div>
+
+
+                </section>
+            </section>
         </div>
     </main>
 </body>
+
+    <script src="cookies.js"></script>
 </html>

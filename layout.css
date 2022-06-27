@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#game__wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+}
+
+#clickable__cookie {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#clickable__cookie:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+}
+
+#clickable__cookie:active {
+    transform: scale(0.95);
+    transition: 0.1s;
+}
+
+#shop__wrapper {
+    width: 350px;
+    height: 100%;
+    background-color: aqua;
+}
+
+#clicking__section {
+    width: calc(100% - 350px);
+    display: grid;
+    grid-template-rows: 15% 85%;
+}
+
+.building__wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.building__icon {
+    height: 70px;
+    background-color: purple;
+}
+
+.building__title {
+    font-size: 36px;
+}
+
+.building__cost {
+    font-size: 18px;
+}
+
+.building__num {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 50px;
+    padding-right: 5px;
+}
+
+#clicking__cookie__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cookie__information__wrapper {
+    display: flex;
+    align-items: flex-end;
+}
+
+#cookie__information__title {
+    background-color: rgba(0, 0, 0, 0.363);
+    width: 100%;
+    color: white;
+}
+
+#cookie__counter {
+    font-size: 32px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#cookie__counter__label {
+    font-size: 32px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#cookies__per__second{
+    text-align: center;
+}
