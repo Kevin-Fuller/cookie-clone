@@ -19,6 +19,27 @@ const cookieButton = document.getElementById('clickable__cookie');
 cookieButton.addEventListener('click', ()=>{
     clickCookie();
 })
+cookieButton.addEventListener('click', getMouseLocation);
+
+function getMouseLocation(e) {
+    let xMouse = e.clientX;
+    let yMouse = e.clientY;
+    const cookieClickingSection = document.getElementById('clicking__section');
+    let ourCookieClickNumber = document.createElement("div");
+    ourCookieClickNumber.style.pointerEvents = 'none';
+    ourCookieClickNumber.innerHTML += `<div class='cookie__clicking__number__on__mouse'>+1</div>`;
+    ourCookieClickNumber.style.position = 'absolute';
+    ourCookieClickNumber.style.top = `${yMouse}px`;
+    ourCookieClickNumber.style.left = `${xMouse}px`;
+    ourCookieClickNumber.style.transform = `translate(-50%,-30px)`;
+    cookieClickingSection.appendChild(ourCookieClickNumber);
+    setTimeout(function(){
+        deleteElementCookieNumber(ourCookieClickNumber)
+      }, 1000);
+    function deleteElementCookieNumber(element) {
+        element.remove();
+    }
+}
 
 //buildings
 let building2Total = 0;
@@ -88,9 +109,9 @@ function updateGreyedOutBuildings() {
 }
 
 //game loop
-setInterval(updateGame, 100)
+setInterval(updateGame, 50)
 function updateGame() {
     updateCookies();
     updateGreyedOutBuildings()
-    cookies += cookiesPerSecond * 0.1
+    cookies += cookiesPerSecond * 0.05
 }

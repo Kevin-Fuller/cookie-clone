@@ -5,7 +5,7 @@
 #game__wrapper {
     width: 100vw;
     height: 100vh;
-    background-color: grey;
+    background-color: rgb(43, 53, 80);
     display: flex;
     justify-content: space-between;
 }
@@ -16,6 +16,9 @@
     border-radius: 50%;
     cursor: pointer;
     transition: 0.1s;
+    background: url('https://lh3.googleusercontent.com/6m9Kv0sG1G5ln-pNAHFAPzVoeUlS0BBPr27FUGEdThZlCYduk6lzSr4HPnQ6QCWow_-y2LPCBIH8QZxcaw2keNNjcdjDIuaVKYpniw=w600');
+    background-size: contain;
+    border: none;
 }
 
 #clickable__cookie:hover {
@@ -34,6 +37,31 @@
     background-color: aqua;
 }
 
+.cookie__clicking__number__on__mouse {
+    font-size: 32px;
+    color: white;
+    pointer-events: none;
+    animation: translateClickAnimation 1s forwards;
+}
+
+@keyframes translateClickAnimation {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    99% {
+        display: block;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+        display: none;
+    }
+}
+
 #clicking__section {
     width: calc(100% - 350px);
     display: grid;
@@ -45,6 +73,13 @@
     display: grid;
     grid-template-columns: 20% 60% 20%;
     cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+              
 }
 
 .building__icon {
